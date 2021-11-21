@@ -8,6 +8,7 @@
 import UIKit
 import SwiftUI
 import AudioToolbox
+import MessageKit
 
 class LoginViewController: UIViewController {
     
@@ -18,6 +19,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordLabelOutlet: UILabel!
     @IBOutlet weak var repeatPasswordLabelOutlet: UILabel!
     @IBOutlet weak var doNothaveAccountOutlet: UILabel!
+    @IBOutlet weak var loginLabelOutlet: UILabel!
     
     //textFields
     @IBOutlet weak var emailTextField: UITextField!
@@ -39,10 +41,14 @@ class LoginViewController: UIViewController {
     //parentView
     @IBOutlet var parentView: UIView!
     
+    //MARK: - vars
+    var isLogin = true
+    
     //MARK: - View lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
             setupTextFieldDelegate()
+            updateUIFor(login: true)
     }
 
     //IBActions
@@ -60,8 +66,9 @@ class LoginViewController: UIViewController {
     
     }
     
-    @IBAction func signUpBtnPressed(_ sender: Any) {
-    
+    @IBAction func signUpBtnPressed(_ sender: UIButton) {
+        updateUIFor(login: sender.titleLabel?.text == "LogIn")
+        isLogin.toggle()
     }
     
     //MARK: - Setup
@@ -91,6 +98,24 @@ class LoginViewController: UIViewController {
             default:
                 repeatPasswordLabelOutlet.text = textField.hasText ? "Repeate Password" : " "
         }
+    }
+    
+    private func updateUIFor(login: Bool){
+        loginBtn.setImage(
+            UIImage(named: login ? "loginBtn" : "registerBtn" ),
+            for: .normal
+        )
+        signUpBtn.setTitle(login ? "SignUp" : "LogIn",
+            for: .normal
+        )
+        doNothaveAccountOutlet.text = login ? "Don't have an account ?" : "Have an account"
+        loginLabelOutlet.text = login ? "LogIn" : "SignUp"
+        UIView.animate(withDuration: 0.5) {
+            self.repeatPasswordTextField.isHidden = login
+            self.repeatPasswordLabelOutlet.isHidden = login
+            self.repeatPasswordView.isHidden = login
+        }
+        
     }
     
 }

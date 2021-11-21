@@ -131,11 +131,11 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" spacing="128" translatesAutoresizingMaskIntoConstraints="NO" id="iEK-aD-Hlz" userLabel="Action Stack View Match Parent">
+                            <stackView autoresizesSubviews="NO" opaque="NO" contentMode="left" alignment="firstBaseline" spacing="128" translatesAutoresizingMaskIntoConstraints="NO" id="iEK-aD-Hlz" userLabel="Action Stack View Match Parent">
                                 <rect key="frame" x="0.0" y="396" width="390" height="30.666666666666686"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sxa-Vt-gqT">
-                                        <rect key="frame" x="0.0" y="0.0" width="131" height="30.666666666666668"/>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sxa-Vt-gqT">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="30.666666666666668"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Forgot password ?">
                                             <fontDescription key="titleFontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
@@ -144,8 +144,8 @@
                                             <action selector="forgotPasswordBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EsO-mz-o0G"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBo-gG-3IP">
-                                        <rect key="frame" x="259" y="0.0" width="131" height="30.666666666666668"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBo-gG-3IP">
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="30.666666666666668"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Resend email">
                                             <fontDescription key="titleFontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
@@ -182,6 +182,7 @@
                         <outlet property="emailView" destination="QQ8-sP-Jfm" id="f0s-ee-Es6"/>
                         <outlet property="forgotPassBtn" destination="Sxa-Vt-gqT" id="mMT-dc-FUx"/>
                         <outlet property="loginBtn" destination="qDq-dr-34F" id="v55-iJ-82I"/>
+                        <outlet property="loginLabelOutlet" destination="lQ3-MF-uwl" id="ekB-Rw-mHR"/>
                         <outlet property="parentView" destination="8bC-Xf-vdC" id="QNV-os-iLX"/>
                         <outlet property="passwordLabelOutlet" destination="aNH-hx-Pc6" id="sER-gD-6ni"/>
                         <outlet property="passwordTextField" destination="Cv0-L0-kL6" id="SCO-Bf-fx2"/>
