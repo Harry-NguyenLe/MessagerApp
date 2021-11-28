@@ -15,6 +15,7 @@
 		DD14A596274907570057CF3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD14A595274907570057CF3B /* Assets.xcassets */; };
 		DD14A599274907570057CF3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD14A597274907570057CF3B /* LaunchScreen.storyboard */; };
 		DD14A5A3274910950057CF3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD14A5A2274910950057CF3B /* GoogleService-Info.plist */; };
+		DD14A5A7275380240057CF3B /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD14A5A6275380240057CF3B /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		DD14A59A274907570057CF3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD14A5A027490F050057CF3B /* Messager */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Messager; sourceTree = "<group>"; };
 		DD14A5A2274910950057CF3B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DD14A5A6275380240057CF3B /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		F2C8AF80FC31E49722D0BDFB /* Pods-Messager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messager.debug.xcconfig"; path = "Target Support Files/Pods-Messager/Pods-Messager.debug.xcconfig"; sourceTree = "<group>"; };
 		FF49173A80F198B38D052C7D /* Pods-Messager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messager.release.xcconfig"; path = "Target Support Files/Pods-Messager/Pods-Messager.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,6 +86,7 @@
 				DD14A597274907570057CF3B /* LaunchScreen.storyboard */,
 				DD14A59A274907570057CF3B /* Info.plist */,
 				DD14A5A027490F050057CF3B /* Messager */,
+				DD14A5A6275380240057CF3B /* Constant.swift */,
 			);
 			path = Messager;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				DD14A58E274907560057CF3B /* LoginViewController.swift in Sources */,
 				DD14A58A274907560057CF3B /* AppDelegate.swift in Sources */,
 				DD14A58C274907560057CF3B /* SceneDelegate.swift in Sources */,
+				DD14A5A7275380240057CF3B /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
