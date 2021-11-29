@@ -40,9 +40,21 @@ class FirebaseUserListener{
                         avatarLink: "",
                         status: "Hey there, i am using Messager"
                      )
-                    
+                    saveUserLocally(user)
+                    self.saveUserToFirestore(user)
                 }
             }
         }
+    }
+    
+    //MARK: Save users
+    func saveUserToFirestore(_ user: User) {
+        do {
+            try firebaseReference(.User).document(user.id).setData(from: user)
+            
+        }catch {
+            print(error.localizedDescription, "adding user")
+        }
+        
     }
 }
