@@ -21,10 +21,12 @@ struct User: Codable, Equatable {
     var avatarLink = ""
     var status: String
     
+    //Get current user id
     static var currentId: String {
         return Auth.auth().currentUser!.uid
     }
     
+    //Get current user, return nil if no current user
     static var currentUser: User? {
         if Auth.auth().currentUser != nil {
             if let dictionary = UserDefaults.standard.data(
@@ -43,6 +45,7 @@ struct User: Codable, Equatable {
         return nil
     }
     
+    //Compare two user are equal or not base on id
     static func == (lhs: User, rhs: User) -> Bool {
         lhs.id == rhs.id
     }
