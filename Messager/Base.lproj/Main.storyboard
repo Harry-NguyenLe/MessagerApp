@@ -91,7 +91,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDq-dr-34F">
-                                <rect key="frame" x="15" y="690" width="384" height="70"/>
+                                <rect key="frame" x="15" y="500.5" width="384" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="NBb-Yc-mQj"/>
                                 </constraints>
@@ -103,8 +103,8 @@
                                     <action selector="loginBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i2r-1B-tvS"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GPA-5m-P9b">
-                                <rect key="frame" x="80" y="780" width="254" height="31"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GPA-5m-P9b" userLabel="Login and signup stack view">
+                                <rect key="frame" x="80" y="816" width="254" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNq-tY-mhh">
                                         <rect key="frame" x="0.0" y="0.0" width="183" height="31"/>
@@ -158,10 +158,10 @@
                             <constraint firstItem="kIj-gA-5av" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="HGf-Mp-7ke"/>
                             <constraint firstItem="lQ3-MF-uwl" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="IaV-Ca-VSM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kIj-gA-5av" secondAttribute="trailing" constant="16" id="Kdn-nd-WzL"/>
-                            <constraint firstItem="GPA-5m-P9b" firstAttribute="top" secondItem="qDq-dr-34F" secondAttribute="bottom" constant="20" id="SRc-vE-Rqe"/>
+                            <constraint firstItem="qDq-dr-34F" firstAttribute="top" secondItem="kIj-gA-5av" secondAttribute="bottom" constant="100" id="Sow-wC-h7H"/>
                             <constraint firstItem="lQ3-MF-uwl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="aeB-3y-dSa"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qDq-dr-34F" secondAttribute="bottom" constant="102" id="gZP-js-CU2"/>
                             <constraint firstItem="kIj-gA-5av" firstAttribute="top" secondItem="lQ3-MF-uwl" secondAttribute="bottom" constant="20" id="l6l-fF-reG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GPA-5m-P9b" secondAttribute="bottom" constant="15" id="oGf-PC-zee"/>
                             <constraint firstItem="iEK-aD-Hlz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="ocj-Oj-5UE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qDq-dr-34F" secondAttribute="trailing" constant="15" id="viN-Pr-fHO"/>
                             <constraint firstItem="iEK-aD-Hlz" firstAttribute="top" secondItem="kIj-gA-5av" secondAttribute="bottom" constant="30" id="wQK-F8-JaU"/>

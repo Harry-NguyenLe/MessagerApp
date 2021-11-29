@@ -8,6 +8,7 @@
 import Foundation
 
 struct Contanst {
+    //Login Signup
     public static let LOGIN = "LogIn"
     public static let SIGNUP = "SignUp"
     public static let REGISTRATION = "Registration"
@@ -18,6 +19,10 @@ struct Contanst {
     public static let HAVE_ACCOUNT = "Have an account"
     public static let LOGIN_BTN_ASSETS = "loginBtn"
     public static let REGISTER_BTN_ASSETS = "registerBtn"
+    
+    //User authentication
+    public static let kCURRENTUSER = "currentUser"
+    
 
 
 }

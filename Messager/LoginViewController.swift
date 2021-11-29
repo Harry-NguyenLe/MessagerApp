@@ -64,7 +64,7 @@ class LoginViewController: UIViewController {
     @IBAction func loginBtnPressed(_ sender: UIButton) {
         if isDataInputtedFor(type: isLogin ? Contanst.LOGIN : Contanst.REGISTRATION){
             //TODO: login or register
-            print("Logging in or registering")
+            print("Have data for login or register")
         }else{
             ProgressHUD.showFailed("All fields are required", interaction: false)
         }
@@ -73,7 +73,7 @@ class LoginViewController: UIViewController {
     @IBAction func forgotPasswordBtnPressed(_ sender: Any) {
         if isDataInputtedFor(type: Contanst.PASSWORD){
             //TODO: reset password
-            print("Resetting password")
+            print("Have data for reset password")
         }else{
             ProgressHUD.showFailed("Email is required", interaction: false)
         }
@@ -83,7 +83,7 @@ class LoginViewController: UIViewController {
     @IBAction func resendEmailBtnPressed(_ sender: Any) {
         if isDataInputtedFor(type: Contanst.PASSWORD){
             //TODO: resend email
-            print("Resending email")
+            print("Have data for resend email")
         }else{
             ProgressHUD.showFailed("Email is required", interaction: false)
         }
