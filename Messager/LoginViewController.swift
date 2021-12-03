@@ -162,7 +162,23 @@ class LoginViewController: UIViewController {
         }
     }
     
-    private func loginUser() {}
+    private func loginUser() {
+        FirebaseUserListener.shared.loginUserWith(
+            email: emailTextField.text!, password: passwordTextField.text!) {
+                (error, isEmailVerified) in
+                if error == nil {
+                    if isEmailVerified {
+                        //TODO: Go to main app
+                        print("User is logged in: ", User.currentUser?.email)
+                    } else {
+                        ProgressHUD.showFailed("Please verify email")
+                        self.resendEmailBtn.isHidden = false
+                    }
+                }else {
+                    ProgressHUD.showFailed(error?.localizedDescription)
+                }
+            }
+    }
     
     private func registerUser() {
         if passwordTextField.text! == repeatPasswordTextField.text! {
