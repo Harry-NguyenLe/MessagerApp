@@ -81,8 +81,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func resendEmailBtnPressed(_ sender: Any) {
         if isDataInputtedFor(type: Contanst.PASSWORD){
-            //TODO: resend email
-            print("Have data for resend email")
+            resendVerificationEmail()
         }else{
             ProgressHUD.showFailed("Email is required", interaction: false)
         }
@@ -169,7 +168,7 @@ class LoginViewController: UIViewController {
                 if error == nil {
                     if isEmailVerified {
                         //TODO: Go to main app
-                        print("User is logged in: ", User.currentUser?.email)
+                        print("User is logged in")
                     } else {
                         ProgressHUD.showFailed("Please verify email")
                         self.resendEmailBtn.isHidden = false
@@ -178,6 +177,32 @@ class LoginViewController: UIViewController {
                     ProgressHUD.showFailed(error?.localizedDescription)
                 }
             }
+    }
+    
+    private func forgotPassword() {
+        FirebaseUserListener.shared.resetPasswordFor(email: emailTextField.text!, completion: {
+            (error) in
+            if error == nil {
+                ProgressHUD.showSuccess("Reset password success")
+            }else {
+                ProgressHUD.showFailed(error?.localizedDescription,
+                                       interaction: true)
+            }
+        })
+    }
+    
+    private func resendVerificationEmail() {
+        FirebaseUserListener.shared.resendEmailVerification(
+            email: emailTextField.text!,
+            completion: {
+                (error) in
+                if error == nil {
+                    ProgressHUD.showSuccess("Resend email success")
+                }else {
+                    ProgressHUD.showFailed(error?.localizedDescription,
+                                           interaction: true)
+                }
+            })
     }
     
     private func registerUser() {

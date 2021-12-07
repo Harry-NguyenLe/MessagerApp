@@ -8,6 +8,7 @@
 import Foundation
 import Firebase
 import CoreMedia
+import simd
 
 class FirebaseUserListener{
     static let shared = FirebaseUserListener()
@@ -105,4 +106,27 @@ class FirebaseUserListener{
             }
         }
     }
+    
+    //MARK: Resend email verification
+    func resendEmailVerification(email: String,
+                                 completion: @escaping (_ error: Error?) -> Void) {
+        Auth.auth().currentUser?.reload {
+            (error) in
+            Auth.auth().currentUser?.sendEmailVerification {
+                (error) in
+                completion(error)
+            }
+        }
+    }
+    
+    //MARK: Reset password
+    func resetPasswordFor(email: String,
+                          completion: @escaping (_ error: Error?) -> Void) {
+        Auth.auth().sendPasswordReset(withEmail: email) {
+            (error) in
+            completion(error)
+        }
+    }
+    
+    
 }
