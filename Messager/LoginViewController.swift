@@ -186,15 +186,36 @@ class LoginViewController: UIViewController {
     }
     
     private func forgotPassword() {
-        FirebaseUserListener.shared.resetPasswordFor(email: emailTextField.text!, completion: {
-            (error) in
-            if error == nil {
-                ProgressHUD.showSuccess("Reset password success")
-            }else {
-                ProgressHUD.showFailed(error?.localizedDescription,
-                                       interaction: true)
+//        FirebaseUserListener.shared.resetPasswordFor(email: emailTextField.text!, completion: {
+//            (error) in
+//            if error == nil {
+//                ProgressHUD.showSuccess("Reset password success")
+//            }else {
+//                ProgressHUD.showFailed(error?.localizedDescription,
+//                                       interaction: true)
+//            }
+//        })
+        
+        var queue = DispatchQueue.init(
+            label: "Test",
+            attributes: .concurrent,
+            target: nil
+        )
+        queue.async {
+            let test = 3
+            // Call API
+            
+            // Run callback
+            
+            queue.asyncAfter(deadline: .now() + 3) {
+                DispatchQueue.main.async {
+                    self.emailLabelOutlet.text = "\(test)"
+                }
             }
-        })
+            
+            
+        }
+
     }
     
     private func resendVerificationEmail() {
