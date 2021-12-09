@@ -71,8 +71,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func forgotPasswordBtnPressed(_ sender: Any) {
         if isDataInputtedFor(type: Contanst.PASSWORD){
-            //TODO: reset password
-            print("Have data for reset password")
+            self.forgotPassword()
         }else{
             ProgressHUD.showFailed("Email is required", interaction: false)
         }
@@ -167,8 +166,7 @@ class LoginViewController: UIViewController {
                 (error, isEmailVerified) in
                 if error == nil {
                     if isEmailVerified {
-                        //TODO: Go to main app
-                        print("User is logged in")
+                        self.navigateToMainApp()
                     } else {
                         ProgressHUD.showFailed("Please verify email")
                         self.resendEmailBtn.isHidden = false
@@ -177,6 +175,14 @@ class LoginViewController: UIViewController {
                     ProgressHUD.showFailed(error?.localizedDescription)
                 }
             }
+    }
+    
+    //MARK: Navigation
+    private func navigateToMainApp() {
+        let mainView = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: "MainApp") as! UITabBarController
+        mainView.modalPresentationStyle = .fullScreen
+        self.present(mainView, animated: true, completion: nil)
     }
     
     private func forgotPassword() {
